@@ -15,7 +15,8 @@
     "lucide-react": "^1.14.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwind-merge": "^3.5.0"
+    "tailwind-merge": "^3.5.0",
+    "vite-plugin-pwa": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

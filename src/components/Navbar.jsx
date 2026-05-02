@@ -19,18 +19,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-luxury-black/90 backdrop-blur-lg py-4 shadow-xl' : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-luxury-black/90 backdrop-blur-lg py-4 shadow-xl' : 'bg-transparent py-6'
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.a
           href="#home"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-serif font-bold tracking-tighter text-white"
+          className="flex items-center"
         >
-          {content.brandName.toUpperCase()}
+          <img
+            src="/logo-light.png"
+            alt="Muwanshots Photography"
+            className={`object-contain transition-all duration-500 drop-shadow-lg ${isScrolled ? 'h-10' : 'h-12'
+              }`}
+          />
         </motion.a>
 
         {/* Desktop Navigation */}
