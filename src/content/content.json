@@ -1,0 +1,169 @@
+{
+  "brandName": "Muwanshots Photography",
+  "navigation": [
+    {
+      "name": "Home",
+      "href": "#home"
+    },
+    {
+      "name": "Gallery",
+      "href": "#gallery"
+    },
+    {
+      "name": "Contact",
+      "href": "#contact"
+    }
+  ],
+  "hero": {
+    "title": "Capturing Moments, Creating Memories.",
+    "subtitle": "Professional photography services in Masaka, Uganda. Specializing in weddings, indoor shoots, and outdoor cinematic experiences.",
+    "ctaText": "Book Now",
+    "ctaHref": "https://wa.me/256000000000",
+    "backgroundImage": "/images/hero-bg.jpg"
+  },
+  "gallery": {
+    "categories": [
+      {
+        "id": "outdoor",
+        "title": "Outdoor Shoots",
+        "images": [
+          {
+            "src": "/images/Outdoor/1.JPG",
+            "alt": "Outdoor Shoot 1"
+          },
+          {
+            "src": "/images/Outdoor/2.JPG",
+            "alt": "Outdoor Shoot 2"
+          },
+          {
+            "src": "/images/Outdoor/3.JPG",
+            "alt": "Outdoor Shoot 3"
+          },
+          {
+            "src": "/images/Outdoor/4.JPG",
+            "alt": "Outdoor Shoot 4"
+          },
+          {
+            "src": "/images/Outdoor/5.JPG",
+            "alt": "Outdoor Shoot 5"
+          }
+        ]
+      },
+      {
+        "id": "indoor",
+        "title": "Indoor Shoots",
+        "images": [
+          {
+            "src": "/images/indoor/1.JPG",
+            "alt": "Indoor Studio 1"
+          },
+          {
+            "src": "/images/indoor/2.JPG",
+            "alt": "Indoor Studio 2"
+          },
+          {
+            "src": "/images/indoor/3.JPG",
+            "alt": "Indoor Studio 3"
+          },
+          {
+            "src": "/images/indoor/4.JPG",
+            "alt": "Indoor Studio 4"
+          },
+          {
+            "src": "/images/indoor/5.JPG",
+            "alt": "Indoor Studio 5"
+          }
+        ]
+      },
+      {
+        "id": "weddings",
+        "title": "Weddings",
+        "images": [
+          {
+            "src": "/images/weddings/1.JPG",
+            "alt": "Wedding 1"
+          },
+          {
+            "src": "/images/weddings/2.JPG",
+            "alt": "Wedding 2"
+          },
+          {
+            "src": "/images/weddings/3.JPG",
+            "alt": "Wedding 3"
+          },
+          {
+            "src": "/images/weddings/4.JPG",
+            "alt": "Wedding 4"
+          },
+          {
+            "src": "/images/weddings/5.JPG",
+            "alt": "Wedding 5"
+          }
+        ]
+      },
+      {
+        "id": "kukyala",
+        "title": "Kukyala (Introductions)",
+        "images": [
+          {
+            "src": "/images/Kukyala/1.JPG",
+            "alt": "Kukyala Ceremony 1"
+          },
+          {
+            "src": "/images/Kukyala/2.JPG",
+            "alt": "Kukyala Ceremony 2"
+          },
+          {
+            "src": "/images/Kukyala/3.JPG",
+            "alt": "Kukyala Ceremony 3"
+          },
+          {
+            "src": "/images/Kukyala/4.JPG",
+            "alt": "Kukyala Ceremony 4"
+          },
+          {
+            "src": "/images/Kukyala/5.JPG",
+            "alt": "Kukyala Ceremony 5"
+          }
+        ]
+      },
+      {
+        "id": "others",
+        "title": "Others",
+        "images": [
+          {
+            "src": "/images/others/1.JPG",
+            "alt": "Event Photography 1"
+          },
+          {
+            "src": "/images/others/2.JPG",
+            "alt": "Event Photography 2"
+          },
+          {
+            "src": "/images/others/3.JPG",
+            "alt": "Event Photography 3"
+          },
+          {
+            "src": "/images/others/4.JPG",
+            "alt": "Event Photography 4"
+          },
+          {
+            "src": "/images/others/5.JPG",
+            "alt": "Event Photography 5"
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+256 705405254",
+    "email": "muwanshots@gmail.com",
+    "location": "Masaka Kampala, Uganda",
+    "instagram": "https://instagram.com/muwanshots",
+    "tiktok": "https://www.tiktok.com/@muwan214",
+    "whatsapp": "https://wa.me/+256705405254"
+  },
+  "footer": {
+    "copyright": "© 2026 Muwanshots Photography. All rights reserved."
+  }
+}
