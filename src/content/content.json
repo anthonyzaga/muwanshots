@@ -128,6 +128,136 @@
         ]
       },
       {
+        "id": "graduation",
+        "title": "Graduation Shoots",
+        "images": [
+          {
+            "src": "/images/graduation/1.JPG",
+            "alt": "Graduation Ceremony 1"
+          },
+          {
+            "src": "/images/graduation/2.JPG",
+            "alt": "Graduation Ceremony 2"
+          },
+          {
+            "src": "/images/graduation/3.JPG",
+            "alt": "Graduation Ceremony 3"
+          },
+          {
+            "src": "/images/graduation/4.JPG",
+            "alt": "Graduation Ceremony 4"
+          },
+          {
+            "src": "/images/graduation/5.JPG",
+            "alt": "Graduation Ceremony 5"
+          }
+        ]
+      },
+      {
+        "id": "birthday",
+        "title": "Birthday Shoots",
+        "images": [
+          {
+            "src": "/images/birthday/1.JPG",
+            "alt": "Birthday shoot 1"
+          },
+          {
+            "src": "/images/birthday/2.JPG",
+            "alt": "Birthday shoot 2"
+          },
+          {
+            "src": "/images/birthday/3.JPG",
+            "alt": "Birthday shoot 3"
+          },
+          {
+            "src": "/images/birthday/4.JPG",
+            "alt": "Birthday shoot 4"
+          },
+          {
+            "src": "/images/birthday/5.JPG",
+            "alt": "Birthday shoot 5"
+          }
+        ]
+      },
+      {
+        "id": "headshots",
+        "title": "Headshots",
+        "images": [
+          {
+            "src": "/images/headshots/1.JPG",
+            "alt": "Headshots 1"
+          },
+          {
+            "src": "/images/headshots/2.JPG",
+            "alt": "Headshots 2"
+          },
+          {
+            "src": "/images/headshots/3.JPG",
+            "alt": "Headshots 3"
+          },
+          {
+            "src": "/images/headshots/4.JPG",
+            "alt": "Headshots 4"
+          },
+          {
+            "src": "/images/headshots/5.JPG",
+            "alt": "Headshots 5"
+          }
+        ]
+      },
+      {
+        "id": "baby",
+        "title": "Baby Shoots",
+        "images": [
+          {
+            "src": "/images/baby-shoots/1.JPG",
+            "alt": "Baby shoot 1"
+          },
+          {
+            "src": "/images/baby-shoots/2.JPG",
+            "alt": "Baby shoot 2"
+          },
+          {
+            "src": "/images/baby-shoots/3.JPG",
+            "alt": "Baby shoot 3"
+          },
+          {
+            "src": "/images/baby-shoots/4.JPG",
+            "alt": "Baby shoot 4"
+          },
+          {
+            "src": "/images/baby-shoots/5.JPG",
+            "alt": "Baby shoot 5"
+          }
+        ]
+      },
+      {
+        "id": "baby-bump",
+        "title": "Baby Bump Shoots",
+        "images": [
+          {
+            "src": "/images/baby-bump/1.JPG",
+            "alt": "Baby bump shoot 1"
+          },
+          {
+            "src": "/images/baby-bump/2.JPG",
+            "alt": "Baby bump shoot 2"
+          },
+          {
+            "src": "/images/baby-bump/3.JPG",
+            "alt": "Baby bump shoot 3"
+          },
+          {
+            "src": "/images/baby-bump/4.JPG",
+            "alt": "Baby bump shoot 4"
+          },
+          {
+            "src": "/images/baby-bump/5.JPG",
+            "alt": "Baby bump shoot 5"
+          }
+        ]
+      },
+      {
         "id": "others",
         "title": "Others",
         "images": [
