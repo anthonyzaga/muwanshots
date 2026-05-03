@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax Effect */}
-      <motion.div 
+      <motion.div
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 10, ease: "easeOut" }}
@@ -31,13 +31,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="text-luxury-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4 block"
           >
-            Luxury Photography
+            {content.brandName}
           </motion.span>
           <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 leading-tight">
             {content.hero.title.split(',').map((part, i) => (
