@@ -1,4 +1,4 @@
-const CACHE_NAME = 'muwanshots-v1';
+const CACHE_NAME = 'muwanshots-v3'; //bump version when updating
 
 const ASSETS = [
     '/',
@@ -8,23 +8,28 @@ const ASSETS = [
     '/icons/icon-512.png'
 ];
 
-// INSTALL → cache core files
+// INSTALL → cache core files + force activation
 self.addEventListener('install', (event) => {
+    self.skipWaiting(); // FORCE NEW SW TO TAKE OVER
+
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
     );
 });
 
-// ACTIVATE → clean old caches
+// ACTIVATE → clean old caches + claim clients
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((keys) =>
-            Promise.all(
-                keys.map((key) => {
-                    if (key !== CACHE_NAME) return caches.delete(key);
-                })
-            )
-        )
+        Promise.all([
+            caches.keys().then((keys) =>
+                Promise.all(
+                    keys.map((key) => {
+                        if (key !== CACHE_NAME) return caches.delete(key);
+                    })
+                )
+            ),
+            self.clients.claim() // FORCE CONTROL OF OPEN TABS
+        ])
     );
 });
 
@@ -32,7 +37,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const req = event.request;
 
-    // 🖼️ Handle images (important for your gallery)
     if (req.destination === 'image') {
         event.respondWith(
             caches.match(req).then((cached) => {
@@ -50,7 +54,6 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // Default: cache-first
     event.respondWith(
         caches.match(req).then((cached) => cached || fetch(req))
     );
