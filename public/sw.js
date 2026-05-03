@@ -1,4 +1,4 @@
-const CACHE_NAME = 'muwanshots-v3'; //bump version when updating
+const CACHE_NAME = 'muwanshots-v4'; //bump version when updating
 
 const ASSETS = [
     '/',
