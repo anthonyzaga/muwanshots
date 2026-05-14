@@ -6,10 +6,52 @@ const MIN_ZOOM = 1;
 const MAX_ZOOM = 4;
 const ZOOM_STEP = 0.4;
 
+// Color Extraction Utility (Canvas-based)
+const extractAverageColor = (src) => {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = "Anonymous";
+    img.src = src;
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      // Downscale drastically for speed
+      canvas.width = 50; 
+      canvas.height = 50;
+      ctx.drawImage(img, 0, 0, 50, 50);
+
+      try {
+        const data = ctx.getImageData(0, 0, 50, 50).data;
+        let r = 0, g = 0, b = 0, count = 0;
+        for (let i = 0; i < data.length; i += 16) { // sample pixels
+          r += data[i];
+          g += data[i + 1];
+          b += data[i + 2];
+          count++;
+        }
+        r = Math.floor(r / count);
+        g = Math.floor(g / count);
+        b = Math.floor(b / count);
+        
+        // Darken for background
+        const dr = Math.floor(r * 0.3);
+        const dg = Math.floor(g * 0.3);
+        const db = Math.floor(b * 0.3);
+        
+        resolve(`radial-gradient(circle at center, rgba(${dr}, ${dg}, ${db}, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%)`);
+      } catch (e) {
+        resolve('rgba(0,0,0,0.98)');
+      }
+    };
+    img.onerror = () => resolve('rgba(0,0,0,0.98)');
+  });
+};
+
 const Lightbox = ({ images = [], currentIndex, onClose, onNavigate }) => {
   const isOpen = currentIndex !== null && currentIndex !== undefined;
   const image = isOpen ? images[currentIndex] : null;
 
+  const [bgColor, setBgColor] = useState('rgba(0,0,0,0.98)');
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -152,7 +194,12 @@ const Lightbox = ({ images = [], currentIndex, onClose, onNavigate }) => {
   useEffect(() => {
     setZoom(1);
     setPan({ x: 0, y: 0 });
-  }, [currentIndex]);
+    
+    // Extract color
+    if (image?.src) {
+      extractAverageColor(image.src).then(setBgColor);
+    }
+  }, [currentIndex, image?.src]);
 
   const hasPrev = isOpen && currentIndex > 0;
   const hasNext = isOpen && currentIndex < images.length - 1;
@@ -162,13 +209,16 @@ const Lightbox = ({ images = [], currentIndex, onClose, onNavigate }) => {
       {isOpen && (
         <motion.div
           ref={containerRef}
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center transition-all duration-1000 ease-out"
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
-          style={{ cursor: zoom > 1 ? 'grab' : 'default' }}
+          style={{ 
+            background: bgColor,
+            cursor: zoom > 1 ? 'grab' : 'default' 
+          }}
         >
 
           {/* Toolbar */}
