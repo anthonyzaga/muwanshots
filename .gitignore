@@ -1,3 +1,11 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
 # Logs
 logs
 *.log
@@ -7,18 +15,44 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Environment / secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
 
-# Editor directories and files
+# Local Cloudflare / Wrangler state
+.wrangler/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+!.vscode/settings.json
+.idea/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Test artifacts
+coverage/
+
+# Large generated media / photography files
+public/images/gallery/
+public/images/*/
+src/content/gallery/
+
+# Original high-res sources (local only, R2 is source of truth)
+originals/
+archive/
+
+# Wrangler local state
+.wrangler/

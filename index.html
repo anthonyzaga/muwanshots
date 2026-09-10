@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -10,28 +11,37 @@
   <meta name="apple-mobile-web-app-title" content="muwan" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <meta name="color-scheme" content="dark light" />
+  <script>
+    (function() {
+      try {
+        var stored = localStorage.getItem('muwanshots-theme');
+        var theme = stored === 'light' || stored === 'dark' ? stored : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.classList.add(theme);
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.colorScheme = theme;
+      } catch(e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
   <!-- Primary Meta Tags -->
-  <title>Muwanshots Photography</title>
-  <meta name="title" content="Muwanshots Photography" />
-  <meta name="description" content="Professional photography services in Masaka, Uganda. Specializing in weddings, indoor shoots, and outdoor cinematic experiences." />
-
+  <title>Muwan Shots Photography - Photography & Videography in Masaka & Kampala</title>
+  <meta name="title" content="Muwan Shots - Photography & Videography in Masaka & Kampala" />
+  <meta name="description" content="Professional photography and videography in Masaka & Kampala, Uganda. Weddings, kukyala, graduations, birthdays, corporate and cinematic storytelling." />
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Muwanshots Photography" />
-  <meta property="og:description" content="Professional photography services in Masaka, Uganda. Specializing in weddings, indoor shoots, and outdoor cinematic experiences." />
+  <meta property="og:title" content="Muwan Shots - Photography & Videography in Masaka & Kampala" />
+  <meta property="og:description" content="Professional photography and videography in Masaka & Kampala, Uganda. Weddings, kukyala, graduations, birthdays, corporate and cinematic storytelling." />
   <meta property="og:image" content="/logo.jpg" />
-
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="Muwanshots Photography" />
-  <meta property="twitter:description" content="Professional photography services in Masaka, Uganda. Specializing in weddings, indoor shoots, and outdoor cinematic experiences." />
+  <meta property="twitter:title" content="Muwan Shots - Photography & Videography in Masaka & Kampala" />
+  <meta property="twitter:description" content="Professional photography and videography in Masaka & Kampala, Uganda. Weddings, kukyala, graduations, birthdays, corporate and cinematic storytelling." />
   <meta property="twitter:image" content="/logo.jpg" />
 </head>
-
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
 </html>

@@ -1,0 +1,20 @@
+name = "muwanshots"
+compatibility_date = "2024-12-01"
+pages_build_output_dir = "dist"
+
+# D1 Database — production ID from `npx wrangler d1 create muwanshots-db`
+[[d1_databases]]
+binding = "DB"
+database_name = "muwanshots-db"
+database_id = "3a43bb43-9e90-42c3-b240-50ab08768666"
+
+# R2 Bucket — enabled, production bucket for media
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "muwanshots-media"
+
+[vars]
+ENVIRONMENT = "production"
+# JWT_SECRET and other secrets are set via `npx wrangler pages secret put JWT_SECRET`
+# or `npx wrangler secret put JWT_SECRET` for Workers, and via `.dev.vars` locally
+# See .dev.vars.example for local development
